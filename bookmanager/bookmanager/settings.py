@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import book.apps
+import login.apps
+import pay.apps
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +33,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#注册/安装子应用
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #方案一'book'
+    #方案二
+    'book.apps.BookConfig',
+    'login.apps.LoginConfig',
+    'pay.apps.PayConfig',
+
 ]
 
 MIDDLEWARE = [
